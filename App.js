@@ -1,7 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { TabNavigator } from 'react-navigation';
 import { Card, Button } from 'react-native-elements';
 import Deck from './src/Deck';
+
+import AuthScreen from './screens/AuthScreen';
+import WelcomeScreen from './screens/WelcomeScreen';
 
 const data = [
   { id: 1, text: 'Did you exercise today?', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-04.jpg' },
@@ -12,7 +16,6 @@ const data = [
 ];
 
 export default class App extends React.Component {
-
   renderCard(item) {
     return (
       <Card
@@ -43,8 +46,18 @@ export default class App extends React.Component {
   }
 
   render() {
+    const MainNavigator = TabNavigator({
+      welcome: { screen: WelcomeScreen },
+      auth: { screen: AuthScreen }
+    },
+    {
+      swipeEnabled: true, // fixes a bug in react navigation
+      lazy: false, // fixes a bug in react navigation
+    });
+
     return (
       <View style={styles.container}>
+        <MainNavigator />
         <Deck
           data={data}
           renderCard={this.renderCard}
@@ -57,8 +70,8 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50
-    // flex: 1,
+    marginTop: 50,
+    flex: 1
     // backgroundColor: '#fff',
     // alignItems: 'center',
     // justifyContent: 'center',
