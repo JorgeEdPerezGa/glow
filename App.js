@@ -1,11 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Card, Button } from 'react-native-elements';
 import Deck from './src/Deck';
 
 import AuthScreen from './screens/AuthScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
+import DeckScreen from './screens/DeckScreen';
+import HistoryScreen from './screens/HistoryScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
 const data = [
   { id: 1, text: 'Did you exercise today?', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-04.jpg' },
@@ -48,7 +51,16 @@ export default class App extends React.Component {
   render() {
     const MainNavigator = TabNavigator({
       welcome: { screen: WelcomeScreen },
-      auth: { screen: AuthScreen }
+      auth: { screen: AuthScreen },
+      main: {
+        screen: TabNavigator({
+          deck: { screen: DeckScreen },
+          history: { screen: HistoryScreen },
+          review: StackNavigator({
+            settings: { screen: SettingsScreen}
+          })
+        })
+      }
     },
     {
       swipeEnabled: true, // fixes a bug in react navigation
