@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Card, Button } from 'react-native-elements';
+import { Provider } from 'react-redux';
 import Deck from './src/Deck';
 
 import AuthScreen from './screens/AuthScreen';
