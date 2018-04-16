@@ -9,6 +9,7 @@ import WelcomeScreen from './screens/WelcomeScreen';
 import DeckScreen from './screens/DeckScreen';
 import HistoryScreen from './screens/HistoryScreen';
 import SettingsScreen from './screens/SettingsScreen';
+import ReviewScreen from './screens/ReviewScreen';
 
 const data = [
   { id: 1, text: 'Did you exercise today?', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-04.jpg' },
@@ -56,15 +57,18 @@ export default class App extends React.Component {
         screen: TabNavigator({
           deck: { screen: DeckScreen },
           history: { screen: HistoryScreen },
-          review: StackNavigator({
-            settings: { screen: SettingsScreen}
-          })
+          review: {
+            screen: StackNavigator({
+              review: { screen: ReviewScreen },
+              settings: { screen: SettingsScreen }
+            })
+          }
         })
       }
-    },
-    {
-      swipeEnabled: true, // fixes a bug in react navigation
-      lazy: false, // fixes a bug in react navigation
+    // {
+    //   swipeEnabled: true, // fixes a bug in react navigation
+    //   lazy: false, // fixes a bug in react navigation
+    // }
     });
 
     return (
