@@ -67,11 +67,12 @@ export default class App extends React.Component {
           }
         })
       }
-    // {
-    //   swipeEnabled: true, // fixes a bug in react navigation
-    //   lazy: false, // fixes a bug in react navigation
-    // }
-    });
+  }, {
+    navigationOptions: {
+      tabBarVisible: false
+    },
+    lazy: true
+  });
 
     return (
       <Provider store={store}>
