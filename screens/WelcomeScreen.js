@@ -12,8 +12,8 @@ const SLIDE_DATA = [
 ];
 
 class WelcomeScreen extends Component {
-  state = { 
-    token: null 
+  state = {
+    token: null
   }
 
   componentWillMount = async() => {

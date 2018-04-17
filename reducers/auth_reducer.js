@@ -1,7 +1,6 @@
-import { 
-  FACEBOOK_LOGIN_SUCCESS, 
-  FACEBOOK_LOGIN_FAIL 
-  
+import {
+  FACEBOOK_LOGIN_SUCCESS,
+  FACEBOOK_LOGIN_FAIL
 } from '../actions/types';
 
 export default function(state = {}, action) {
@@ -9,8 +8,8 @@ export default function(state = {}, action) {
     case FACEBOOK_LOGIN_SUCCESS:
       return { token: action.payload };
     case FACEBOOK_LOGIN_FAIL:
-      return { tocken: null };
-    default: 
-    return state;
+      return { token: null };
+    default:
+      return state;
   }
 }

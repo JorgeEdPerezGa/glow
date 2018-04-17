@@ -6,7 +6,7 @@ class DeckScreen extends Component {
   static navigationOptions = {
     title: 'Questions',
     tabBarIcon:  ({ tintColor }) => {
-      return <Icon name='mood' size={30} color={tintColor} />;
+      return <Icon name='layers' size={30} color={tintColor} />;
     }
   }
   render() {

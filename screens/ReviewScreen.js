@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
@@ -14,10 +15,10 @@ class ReviewScreen extends Component {
           onPress = {() => navigate('settings')}
           backgroundColor="rgba(0,0,0,0)"
           color="rgba(0, 122, 255, 1)"
-        />  
+        />
       ),
       tabBarIcon:  ({ tintColor }) => {
-        return <Icon name='book' size={30} color={tintColor} />;
+        return <Icon name='nature-people' size={30} color={tintColor} />;
       }
       // style: {
       //   marginTop: Platform.OS === 'android' ? 24 : 0
