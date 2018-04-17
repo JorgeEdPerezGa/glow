@@ -10,7 +10,7 @@ class SettingScreen extends Component {
       <ScrollView>
         <Text style={styles.titleText}>GLOW</Text>
         <Text style={styles.paragraphText}>is a mobile application that provides a user's clinician the ability to accurately measure and record anxiety and depression related disorders', based on an individuals state in the PHQ-9 scale.</Text>
-        <Text style={styles.paragraphText}>The PHQ-9, created by Dr. Kurt Kroenke, is a validated, 9-question tool to assess for the degree of depression present in an individual; the questions are not scored, but is useful functionally to help the clinician assess the impact of the patient's symptoms on his or her life.</Text>
+        <Text style={styles.paragraphText}>The PHQ-9, created by Dr. Kurt Kroenke, is a validated, 9-question tool to assess for the degree of depression present in an individual; the questions help the clinician assess the impact of the patient's symptoms on his or her life.</Text>
         <Text style={styles.paragraphText}>In addition to making criteria-based diagnoses of depressive disorders, the PHQ-9 is also a reliable and valid measure of depression severity. These characteristics plus its brevity make the PHQ-9 a useful clinical and research tool.</Text>
         <Text style={styles.paragraphText}>Anxiety disorders may develop from a complex set of risk factors, including genetics, brain chemistry, personality, and life events.</Text>
 
