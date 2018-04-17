@@ -11,7 +11,7 @@ class ReviewScreen extends Component {
       // title: 'ABOUT',
       headerRight: (
         <Button
-          title = "ABOUT US"
+          title = "ABOUT GLOW"
           onPress = {() => navigate('settings')}
           backgroundColor="rgba(0,0,0,0)"
           color="rgba(0, 122, 255, 1)"
@@ -29,7 +29,7 @@ class ReviewScreen extends Component {
   render() {
     return (
       <ScrollView>
-        <Text style={styles.titleText}>ANXIETY DISORDERS</Text>
+        <Text style={styles.titleText}>ABOUT ANXIETY DISORDERS</Text>
         <Text style={styles.paragraphText}>Anxiety disorders are real, serious medical conditions - just as real and serious as physical disorders such as heart disease or diabetes. Anxiety disorders are the most common and pervasive mental disorders in the United States.</Text>
         <Text style={styles.paragraphText}>The term "anxiety disorder" refers to specific psychiatric disorders that involve extreme fear or worry, and includes:</Text>
         <SectionList
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 27,
     fontWeight: 'bold',
     textAlign: 'center',
-    margin: 50,
+    margin: 45,
     marginBottom: 40,
     // color: '#1c5068'
   },
