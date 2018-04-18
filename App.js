@@ -45,7 +45,7 @@ export default class App extends React.Component {
         screen: TabNavigator({
           history: { screen: HistoryScreen },
           deck: { screen: DeckScreen },
-          review: {
+          ABOUT: {
             screen: StackNavigator({
               review: { screen: ReviewScreen },
               settings: { screen: SettingsScreen }

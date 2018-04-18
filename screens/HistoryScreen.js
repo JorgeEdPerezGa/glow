@@ -4,7 +4,7 @@ import { Icon } from 'react-native-elements';
 
 class HistoryScreen extends Component {
   static navigationOptions = {
-    title: 'History',
+    title: 'YOUR GLOW',
     tabBarIcon:  ({ tintColor }) => {
       return <Icon name='format-list-bulleted' size={30} color={tintColor} />;
     }
