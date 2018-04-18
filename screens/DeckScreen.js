@@ -60,7 +60,7 @@ const data = [
 
   'https://images.pexels.com/photos/967933/pexels-photo-967933.jpeg?auto=compress&cs=tinysrgb&h=350'
 },
-  { id: 10, title:'10/10', text: 'How difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?', uri:
+  { id: 10, title:'10/10', text: 'Have these problems made it difficult for you to do your work, take care of things at home, or get along with other people?', uri:
 
   //'https://slack-imgs.com/?c=1&url=https%3A%2F%2Fi.imgur.com%2FNFX7wmj.png'
 
@@ -106,7 +106,7 @@ class DeckScreen extends Component {
     return (
       <Card>
         <Text style={styles.noMoreCards}>
-          {"THOSE ARE ALL OF TODAY'S QUESTIONS, SEE YOU TOMORROW!"}
+          {"Those are all of today's questions. See you Tomorrow!"}
         </Text>
       </Card>
     )
