@@ -12,6 +12,35 @@ import SettingsScreen from './screens/SettingsScreen';
 import ReviewScreen from './screens/ReviewScreen';
 
 export default class App extends React.Component {
+  renderCard(item) {
+    return (
+      <Card
+        key={item.id}
+        title={item.text}
+        image={{ uri: item.uri }}
+        >
+        <Text style={{ marginBottom: 10 }}>
+          Jorge
+        </Text>
+        <Button
+
+          icon={{ name: 'code' }}
+          backgroundColor="#03A9F4"
+          title="View Now!"
+        />
+      </Card>
+    )
+  }
+
+  renderNoMoreCards() {
+    return (
+      <Card title='No more cards'>
+        <Text style={{ marginBottom: 10 }}>
+          There are no more cards.
+        </Text>
+      </Card>
+    )
+  }
 
   render() {
     const MainNavigator = TabNavigator({

@@ -48,11 +48,14 @@ const styles = {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    width: SCREEN_WIDTH
+    width: SCREEN_WIDTH,
   },
   textStyle: {
     fontSize: 30,
-    color: 'white'
+    textAlign: 'center',
+    color: 'white',
+    margin: 30,
+    lineHeight: 50
   },
   buttonStyle: {
     backgroundColor: '#0288D1',

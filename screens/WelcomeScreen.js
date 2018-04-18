@@ -6,9 +6,14 @@ import Slides from '../components/Slides';
 
 
 const SLIDE_DATA = [
-  { text: 'Welcome to HYPERGLOW', color: 'green' },
-  { text: 'Respond daily quesions, slide right for yes and left for no.', color: 'blue' },
-  { text: 'test', color: 'gray' }
+  { text: 'SWIPE RIGHT TO BEGIN', color: '#E54760' },
+  { text: 'WELCOME TO GLOW', color: '#E58100' },
+  { text: "GLOW is a mobile application that provides a user a more accurate record of anxiety and depression related disorders", color: '#D4AB35' },
+  { text: 'Respond the set of ten daily questions and receive a color reflecting your weekly status', color: '#3CB88D'
+  },
+  { text: 'Different colors aware the user of a certain status triggering mindfulness in everyday activities', color: '#08A8AB'
+  },
+  { text: '', color: '#2E639C' }
 ];
 
 class WelcomeScreen extends Component {
