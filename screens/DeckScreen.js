@@ -60,7 +60,7 @@ const data = [
 
   'https://images.pexels.com/photos/967933/pexels-photo-967933.jpeg?auto=compress&cs=tinysrgb&h=350'
 },
-  { id: 10, title:'10/10', text: 'How difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?', uri:
+  { id: 10, title:'10/10', text: 'Have these problems made it difficult for you to do your work, take care of things at home, or get along with other people?', uri:
 
   //'https://slack-imgs.com/?c=1&url=https%3A%2F%2Fi.imgur.com%2FNFX7wmj.png'
 
@@ -105,8 +105,8 @@ class DeckScreen extends Component {
   renderNoMoreCards() {
     return (
       <Card>
-        <Text style={{ marginBottom: 10, textAlign: 'center' }}>
-          THANK YOU, SEE YOU TOMORROW.
+        <Text style={styles.noMoreCards}>
+          {"Those are all of today's questions. See you Tomorrow!"}
         </Text>
       </Card>
     )
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
     // alignItems: 'center',
     height: 380,
-    borderWidth: 2,
+    borderWidth: 0,
     borderColor: '#7b7b7b',
     backgroundColor: '#f3f3f3',
     shadowOffset:{ width: 0, height: 15, },
@@ -186,6 +186,13 @@ const styles = StyleSheet.create({
     // marginBottom: 20,
     // color: '#1c4f67'
   },
+  noMoreCards: {
+    padding: 30,
+    backgroundColor:'#e0a669',
+    fontSize: 25,
+    color: '#fff',
+    textAlign: 'center'
+  }
 });
 
 export default DeckScreen;
