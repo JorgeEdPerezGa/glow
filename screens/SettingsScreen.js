@@ -5,6 +5,16 @@ import { Button, Icon } from 'react-native-elements';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 class SettingScreen extends Component {
+  static navigationOptions = (props) => {
+    const { navigate } = props.navigation;
+
+    return {
+      tabBarIcon:  ({ tintColor }) => {
+        return <Icon name='list' size={30} color={tintColor} />;
+      }
+    }
+  }
+
   render() {
     return (
       <ScrollView style={{backgroundColor: '#292b31'}}>

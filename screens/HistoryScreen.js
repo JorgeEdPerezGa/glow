@@ -6,7 +6,7 @@ class HistoryScreen extends Component {
   static navigationOptions = {
     title: 'YOUR GLOW',
     tabBarIcon:  ({ tintColor }) => {
-      return <Icon name='format-list-bulleted' size={30} color={tintColor} />;
+      return <Icon name='lightbulb-outline' size={30} color={tintColor} />;
     }
   }
   render() {

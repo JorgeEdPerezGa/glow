@@ -18,7 +18,7 @@ class ReviewScreen extends Component {
         />
       ),
       tabBarIcon:  ({ tintColor }) => {
-        return <Icon name='nature-people' size={30} color={tintColor} />;
+        return <Icon name='list' size={30} color={tintColor} />;
       }
       // style: {
       //   marginTop: Platform.OS === 'android' ? 24 : 0
