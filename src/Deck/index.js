@@ -29,7 +29,7 @@ class Deck extends Component {
         }
       }
     })
-    this.state = { panResponder, position, index: 0 };
+    this.state = { panResponder, position, index: 0, totalPoints: 0 };
   }
 
   componentWillUpdate() {
@@ -68,10 +68,17 @@ class Deck extends Component {
   onSwipeComplete(direction) {
     const { onSwipeLeft, onSwipeRight, data } = this.props;
     const item = data[this.state.index];
+    this.addPoints(direction);
 
     direction === 'right' ? onSwipeRight(item) : onSwipeLeft(item);
     this.state.position.setValue({ x: 0, y: 0 });
     this.setState({ index: this.state.index + 1 });
+  }
+
+  addPoints(direction) {
+    direction === 'right' ? this.setState({
+      totalPoints: this.state.totalPoints + 1
+    }) : null;
   }
 
 
