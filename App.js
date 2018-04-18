@@ -17,13 +17,8 @@ export default class App extends React.Component {
       <Card
         key={item.id}
         title={item.text}
-        image={{ uri: item.uri }}
-        >
-        <Text style={{ marginBottom: 10 }}>
-          Jorge
-        </Text>
+        image={{ uri: item.uri }}>
         <Button
-
           icon={{ name: 'code' }}
           backgroundColor="#03A9F4"
           title="View Now!"
@@ -48,8 +43,8 @@ export default class App extends React.Component {
       auth: { screen: AuthScreen },
       main: {
         screen: TabNavigator({
-          deck: { screen: DeckScreen },
           history: { screen: HistoryScreen },
+          deck: { screen: DeckScreen },
           review: {
             screen: StackNavigator({
               review: { screen: ReviewScreen },
