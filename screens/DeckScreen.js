@@ -105,8 +105,8 @@ class DeckScreen extends Component {
   renderNoMoreCards() {
     return (
       <Card>
-        <Text style={{ marginBottom: 10, textAlign: 'center' }}>
-          THANK YOU, SEE YOU TOMORROW.
+        <Text style={styles.noMoreCards}>
+          {"THOSE ARE ALL OF TODAY'S QUESTIONS, SEE YOU TOMORROW!"}
         </Text>
       </Card>
     )
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
     // alignItems: 'center',
     height: 380,
-    borderWidth: 2,
+    borderWidth: 0,
     borderColor: '#7b7b7b',
     backgroundColor: '#f3f3f3',
     shadowOffset:{ width: 0, height: 15, },
@@ -186,6 +186,13 @@ const styles = StyleSheet.create({
     // marginBottom: 20,
     // color: '#1c4f67'
   },
+  noMoreCards: {
+    padding: 30,
+    backgroundColor:'#e0a669',
+    fontSize: 25,
+    color: '#fff',
+    textAlign: 'center'
+  }
 });
 
 export default DeckScreen;
