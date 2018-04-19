@@ -29,7 +29,7 @@ class Deck extends Component {
         }
       }
     })
-    this.state = { panResponder, position, index: 0, totalPoints: 0 };
+    this.state = { panResponder, position, index: 0, totalPoints: 0, counter: 0, totals: 0 };
   }
 
   componentWillUpdate() {
@@ -71,8 +71,10 @@ class Deck extends Component {
     this.addPoints(direction);
 
     direction === 'right' ? onSwipeRight(item) : onSwipeLeft(item);
+    const nextScore = direction === 'right' ? this.state.counter + 1 : this.state.counter;
+
     this.state.position.setValue({ x: 0, y: 0 });
-    this.setState({ index: this.state.index + 1 });
+    this.setState({ index: this.state.index + 1, counter: nextScore });
   }
 
   addPoints(direction) {
@@ -88,8 +90,32 @@ class Deck extends Component {
     }).start();
   }
 
+  async componentDidMount() {
+    let totals = await this.fetchDailyTotals();
+    await this.setState({ totals })
+  }
+
+  fetchDailyTotals = async() => {
+    const initialFetch = await fetch(`https://hyperglow.herokuapp.com/api/v1/users/1/daily_totals`);
+    return await initialFetch.json();
+  }
+
+  postDailyTotal = async() => {
+    const { totals } = this.state;
+    const daily_total = this.state.counter
+    console.log(totals);
+    const week_start_date = totals % 7 === 0 ? new Date() : totals[totals.length - 1].week_start_date;
+    const post = await fetch(`https://http://localhost:3000/api/v1/users/1/daily_totals`, {
+      method: 'POST',
+      body: JSON.stringify({ current_date: new Date(), week_start_date, daily_total}),
+      headers: new Headers({ 'Content-Type': 'application/json' })
+    });
+    return await post.json();
+  }
+
   renderCards() {
     if(this.state.index >= this.props.data.length) {
+      this.postDailyTotal()
       return this.props.renderNoMoreCards();
     }
 

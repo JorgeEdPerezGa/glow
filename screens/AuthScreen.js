@@ -5,20 +5,20 @@ import * as actions from '../actions'
 
 class AuthScreen extends Component {
   componentDidMount() {
-    this.props.facebookLogin();
-    this.onAuthComplete(this.props);
+    // this.props.facebookLogin();
+    // this.onAuthComplete(this.props);
     //AsyncStorage.removeItem('fb_token');
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.onAuthComplete(nextProps);
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   this.onAuthComplete(nextProps);
+  // }
 
-  onAuthComplete(props) {
-    if (props.token) {
-      this.props.navigation.navigate('deck');
-    }
-  }
+  // onAuthComplete(props) {
+  //   if (props.token) {
+  //     this.props.navigation.navigate('deck');
+  //   }
+  // }
 
   render() {
     return (
