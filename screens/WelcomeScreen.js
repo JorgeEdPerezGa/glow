@@ -17,17 +17,17 @@ const SLIDE_DATA = [
 ];
 
 class WelcomeScreen extends Component {
-  state = {
-    token: null
-  }
+  // state = {
+  //   token: null
+  // }
 
   componentWillMount = async() => {
-    let token = await AsyncStorage.getItem('fb_token');
-    if (token) {
-       this.props.navigation.navigate('deck');
-    } else {
-      this.setState({ token });
-    }
+    // let token = await AsyncStorage.getItem('fb_token');
+    // if (token) {
+    //    this.props.navigation.navigate('deck');
+    // } else {
+    //   this.setState({ token });
+    // }
   }
 
   onSlidesComplete = () => {
@@ -35,9 +35,9 @@ class WelcomeScreen extends Component {
   }
 
   render() {
-    if (_.isNull(this.state.token)) {
-      return <AppLoading />;
-    }
+    // if (_.isNull(this.state.token)) {
+    //   return <AppLoading />;
+    // }
 
     return (
       <Slides

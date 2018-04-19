@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, SectionList, Linking, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, SectionList, Linking, Dimensions, AsyncStorage } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 class SettingScreen extends Component {
+
+  // componentDidMount() {
+  //   AsyncStorage.removeItem('fb_token');
+  // }
+
   static navigationOptions = (props) => {
     const { navigate } = props.navigation;
 
