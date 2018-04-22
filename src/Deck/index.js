@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { View, Animated, PanResponder, Dimensions, LayoutAnimation, UIManager } from 'react-native';
+import { connect } from 'react-redux';
+import { addColor } from '../../actions';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SWIPE_THRESHOLD = 0.25 * SCREEN_WIDTH;
@@ -90,14 +92,15 @@ class Deck extends Component {
     }).start();
   }
 
-  async componentDidMount() {
-    let totals = await this.fetchDailyTotals();
-    await this.setState({ totals })
-  }
+  // async componentDidMount() {
+  //   let totals = await this.fetchDailyTotals();
+  //   await this.setState({ totals })
+  // }
 
   fetchDailyTotals = async() => {
     const initialFetch = await fetch(`https://hyperglow.herokuapp.com/api/v1/users/1/daily_totals`);
-    return await initialFetch.json();
+    const allDays = await initialFetch.json();
+    console.log(allDays);
   }
 
   postDailyTotal = async() => {
@@ -115,7 +118,8 @@ class Deck extends Component {
 
   renderCards() {
     if(this.state.index >= this.props.data.length) {
-      this.postDailyTotal()
+      this.postDailyTotal();
+      this.props.addColor(this.state.counter)
       return this.props.renderNoMoreCards();
     }
 
@@ -146,6 +150,7 @@ class Deck extends Component {
   }
 
   render(){
+    console.log(this.state.counter);
     return (
       <View>
           {this.renderCards()}
@@ -161,5 +166,8 @@ const styles = {
   }
 }
 
+export const mapDispatchToProps = dispatch => ({
+  addColor:(color) => dispatch(addColor(color))
+})
 
-export default Deck;
+export default connect(null, mapDispatchToProps)(Deck);
