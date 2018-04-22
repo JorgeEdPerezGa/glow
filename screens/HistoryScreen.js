@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView, SectionList, Linking, Dimensions } from 'react-native';
 import { Icon } from 'react-native-elements';
+import { connect } from 'react-redux';
 
 class HistoryScreen extends Component {
   static navigationOptions = {
@@ -9,10 +10,27 @@ class HistoryScreen extends Component {
       return <Icon name='lightbulb-outline' size={30} color={tintColor} />;
     }
   }
+  constructor() {
+    super()
+    this.state = {
+      counter: 0
+    }
+  }
+
+  handleUpdate = () => {
+    let color = this.props.color
+    this.setState({ counter: color })
+  }
+
   render() {
+    let newColor = this.state.counter >= 3 ? 'blue' : '#3aff7c';
     return (
-      <View style={{backgroundColor: '#3aff7c', flex: 1}}>
-        <Text style={styles.titleText}>YOUR GLOW</Text>
+      <View
+        style={{backgroundColor: newColor, flex: 1}}>
+        <Text
+          style={styles.titleText}
+          onPress={() => this.handleUpdate()}
+          >YOUR GLOW</Text>
       </View>
     );
   }
@@ -36,4 +54,8 @@ const styles = StyleSheet.create({
   }
 });
 
-export default HistoryScreen;
+export const mapStateToProps = store => ({
+  color: store.color
+})
+
+export default connect(mapStateToProps)(HistoryScreen);
